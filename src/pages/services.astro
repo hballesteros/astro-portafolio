@@ -1,0 +1,33 @@
+---
+import Layout from '@layouts/Layout.astro';
+import TitlePage from '../components/TitlePage.astro';
+import CardService from '../components/CardService.astro';
+
+const services = [
+  {
+    title: "Web Development",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus accusamus explicabo architecto eligendi totam et. Repudiandae veritatis numquam, iusto hic aspernatur, cumque porro non possimus ipsa magni totam! Ipsam.",
+  },
+  {
+    title: "Mobile Development",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus accusamus explicabo architecto eligendi totam et. Repudiandae veritatis numquam, iusto hic aspernatur, cumque porro non possimus ipsa magni totam! Ipsam.",
+  },
+  {
+    title: "Consultation",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad possimus accusamus explicabo architecto eligendi totam et. Repudiandae veritatis numquam, iusto hic aspernatur, cumque porro non possimus ipsa magni totam! Ipsam.",
+  }
+]
+---
+
+<Layout title="Services">
+  <section class="bg-gray-200 pt-20 pb-28 px-8">
+    <div class="max-w-6xl mx-auto">
+      <TitlePage title="Services" subtitle="Here's what I offer" />
+      <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20" >
+        { 
+          services.map((item) => <CardService title={ item.title } desc={ item.desc }/> )
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
